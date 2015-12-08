@@ -1,0 +1,44 @@
+body {
+	margin-top: 50px;
+	margin-left: 50px;
+}
+
+.title {
+	color: red;
+	max-width: 24em;
+	margin-bottom: 50px;
+}
+
+form {
+	margin-bottom: 0 !important;
+	display: inline-block;
+}
+
+.edit-form > form > textarea {
+	display: block;
+}
+
+.new-form > form > textarea {
+	display: block;
+}
+.content {
+	width: 500px;
+	word-wrap: break-word;
+	margin-bottom: 20px;
+}
+
+.new-post {
+	margin-bottom: 50px;
+}
+
+.post {
+	margin-top: 50px;
+}
+
+.search > form > input {
+	display: inline-block;
+}
+
+.containor {
+	margin-top: 
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+	<script src="/js/scripts.js" type="text/javascript"></script>
+</head>
+<body>
+	
+	<div class="title">
+		<h1>my css blogroll</h1>
+	</div>
+	<div class="new-post">
+		<a href="/posts/new">create a new post</a>
+	</div>
+	<div class="search">
+		<form method="POST" action="/search">
+			<input type="text" name="search" placeholder="Search...">
+			<input type="submit">
+		</form>
+	</div>
+
+	<div class="containor">
+		<% data.forEach(function(e) { %>
+			<div class="post">
+				<h4> <%= e.title %> </h4>
+				<div class="content">
+				<%	if(e.content.match(/^(http|https):\/\//)) { %>
+						<a href="<%=e.content%>"><%= e.content %></a> 
+				<%	} else {  %>
+						<p><%= e.content %></p>
+				<%	}  %>
+				</div>
+
+				<form method="GET" action="/posts/<%=e.id%>/edit">
+					<input type="submit" value="edit">
+				</form>
+
+				<form method="POST" action="/posts/<%=e.id%>?_method=DELETE">
+					<input type="submit" value="delete">
+				</form>
+			</div>
+		<% }) %>
+		
+	</div>
+	
+	
+	
+	
+	
+</body>
+</html>
