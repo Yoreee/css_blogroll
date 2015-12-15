@@ -8,3 +8,4 @@ I created this application so that I could jot down bookmarks or information abo
 * Better formatting
 * Dont put content as placeholder
 * More creative fonts
+* Allow markdown formatting
