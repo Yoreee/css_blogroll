@@ -9,23 +9,26 @@
 	<script src="/js/scripts.js" type="text/javascript"></script>
 </head>
 <body>
-	<h1>search</h1>
-	<a href="/posts">Back to index</a>
-	<% results.forEach(function(e) { %>
-			<div class="post">
-				<h4> <%= e.title %> </h4>
-				<div class="content">
-					<p> <%= e.content %> </p>
-				</div>
-				<form method="GET" action="/posts/<%=e.id%>/edit">
-					<input type="submit" value="edit">
-				</form>
+	<div class="outer">
+		<h1>search</h1>
+		<a href="/posts">Back to index</a>
+		<% results.forEach(function(e) { %>
+				<div class="post">
+					<h4> <%= e.title %> </h4>
+					<div class="content">
+						<p> <%= e.content %> </p>
+					</div>
+					<form method="GET" action="/posts/<%=e.id%>/edit">
+						<input type="submit" value="edit">
+					</form>
 
-				<form method="POST" action="/posts/<%=e.id%>?_method=DELETE">
-					<input type="submit" value="delete">
-				</form>
-			</div>
-		<% }) %>
+					<form method="POST" action="/posts/<%=e.id%>?_method=DELETE">
+						<input type="submit" value="delete">
+					</form>
+				</div>
+			<% }) %>
+		
+	</div>
 
 </body>
 </html>

@@ -9,44 +9,47 @@
 	<script src="/js/scripts.js" type="text/javascript"></script>
 </head>
 <body>
-	
-	<div class="title">
-		<h1>my css blogroll</h1>
-	</div>
-	<div class="new-post">
-		<a href="/posts/new">create a new post</a>
-	</div>
-	<div class="search">
-		<form method="POST" action="/search">
-			<input type="text" name="search" placeholder="Search...">
-			<input type="submit">
-		</form>
-	</div>
+	<div class="outer">
+		
+		<div class="title">
+			<h1>my css blogroll</h1>
+		</div>
+		<div class="new-post">
+			<a href="/posts/new">create a new post</a>
+			<h5>or search your saved articles here:</h5>
+		</div>
+		<div class="search">
+			<form method="POST" action="/search">
+				<input type="text" name="search" placeholder="Search...">
+				<input type="submit">
+			</form>
+		</div>
 
-	<div class="containor">
-		<% data.forEach(function(e) { %>
-			<div class="post">
-				<h4> <%= e.title %> </h4>
-				<div class="content">
-				<%	if(e.content.match(/^(http|https):\/\//)) { %>
-						<a href="<%=e.content%>"><%= e.content %></a> 
-				<%	} else {  %>
-						<p><%= e.content %></p>
-				<%	}  %>
+		<div class="containor">
+			<% data.forEach(function(e) { %>
+				<div class="post">
+					<h4> <%= e.title %> </h4>
+					<div class="content">
+					<%	if(e.content.match(/^(http|https):\/\//)) { %>
+							<a href="<%=e.content%>"><%= e.content %></a> 
+					<%	} else {  %>
+							<p><%= e.content %></p>
+					<%	}  %>
+					</div>
+
+					<form method="GET" action="/posts/<%=e.id%>/edit">
+						<input type="submit" value="edit">
+					</form>
+
+					<form method="POST" action="/posts/<%=e.id%>?_method=DELETE">
+						<input type="submit" value="delete">
+					</form>
 				</div>
-
-				<form method="GET" action="/posts/<%=e.id%>/edit">
-					<input type="submit" value="edit">
-				</form>
-
-				<form method="POST" action="/posts/<%=e.id%>?_method=DELETE">
-					<input type="submit" value="delete">
-				</form>
-			</div>
-		<% }) %>
+			<% }) %>
+			
+		</div>
 		
 	</div>
-	
 	
 	
 	

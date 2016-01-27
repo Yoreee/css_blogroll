@@ -1,4 +1,38 @@
 body {
+	margin: 0 auto;
+	padding: 0;
+}
+.outer {
+	margin: 0 auto;
+	text-align: center;
+	width: 80%;
+	max-width: 300px;
+	padding-bottom: 100px;
+}
+
+.post > form {
+	display: inline;
+}
+
+form {
+	display: inline;
+}
+
+.cancel {
+	display: inline;
+}
+
+.title {
+	color: rgb(0, 136, 178);
+}
+
+h5 {
+	color: rgb(248, 158, 93);
+}
+.post {
+	margin: 50px 0 0 0;
+}
+/*body {
 	margin-top: 50px;
 	margin-left: 50px;
 }
@@ -41,4 +75,4 @@ form {
 
 .containor {
 	margin-top: 
-}
+}*/
